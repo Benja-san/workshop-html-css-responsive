@@ -1,0 +1,96 @@
+.homeSection {
+  width: 100%;
+  & header {
+    min-height: 250px;
+    height: 25vh;
+    width: 100%;
+    background-image: url("https://jesseseha.files.wordpress.com/2018/03/samuel-scrimshaw-76649-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--lightColor);
+    & h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+  }
+}
+
+.aboutSection {
+  width: var(--maxSectionWidth);
+  margin: 2rem auto 4rem;
+
+  & p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+.featuredSection {
+  width: var(--maxSectionWidth);
+  margin: 0 auto;
+  & ul {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+    width: 100%;
+
+    & li {
+      background-color: var(--lightColor);
+      width: calc(50% - 1rem);
+      border-radius: 7px;
+      padding: 2rem 0.2rem;
+      box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.section {
+  &:not(:first-of-type) {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+@media screen {
+  .homeSection {
+    & header {
+      & h1 {
+        filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .featuredSection {
+    & ul {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr 1fr;
+      & li {
+        width: initial;
+        &:first-of-type {
+          grid-column: 1 / span 2;
+          grid-row: 1 / span 2;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .featuredSection {
+    & ul {
+      & li {
+        color: var(--main-color);
+        &:first-of-type {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

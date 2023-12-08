@@ -1,0 +1,7 @@
+:root {
+  --main-color: #a306b6;
+  --lightColor: #fffcfc;
+  --background-color: #f2f2f2;
+  --maxSectionWidth: 65ch;
+  --minHeightMain: calc(100vh - 101px - 51px);
+}
