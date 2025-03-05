@@ -6,6 +6,10 @@
   font-weight: initial;
 }
 
+body {
+  background-color: #f2f2f2;
+}
+
 a,
 a:visited {
   color: white;
@@ -14,4 +18,9 @@ a:visited {
 
 ul {
   list-style-type: none;
+}
+
+h2 {
+  color: white;
+  font-weight: 600;
 }
