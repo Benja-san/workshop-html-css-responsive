@@ -6,15 +6,17 @@
 .globalNavbar {
   background-color: var(--primaryColor);
   padding: var(--layoutPadding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .globalNavbar h2 {
   margin-bottom: 10px;
 }
 
-.globalNavbar ul {
-  display: flex;
-  gap: 10px;
+.globalNavbar ul li a {
+  font-weight: 600;
 }
 
 .globalHeader {
@@ -22,12 +24,14 @@
   background-image: url(https://media.istockphoto.com/id/840781672/photo/beautiful-nature-norway-aerial-photography.jpg?s=612x612&w=0&k=20&c=dDzue4-TkX8dNufr1BVICWtvY5mLtNdcqwM2kpKitWM=);
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .globalHeader h2 {
   text-align: center;
-  padding-top: 62.5px;
-  font-size: 2rem;
+  font-size: clamp(16px 2rem 3rem);
 }
 
 .section {
@@ -60,6 +64,10 @@
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
 }
 
+.featuredSection ul li:first-of-type {
+  grid-column: span 2;
+}
+
 .featuredSection ul li article h3 {
   font-weight: 600;
 }
@@ -67,4 +75,31 @@
   background-color: var(--primaryColor);
   padding: var(--layoutPadding);
   color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .globalNavbar {
+    flex-direction: column;
+    align-items: baseline;
+  }
+
+  .globalNavbar ul {
+    display: flex;
+    gap: 10px;
+  }
+
+  .featuredSection ul {
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .featuredSection ul li:first-of-type {
+    grid-row: span 2;
+  }
+}
+
+@media screen {
+  .globalHeader h2 {
+    filter: drop-shadow(4px 4px 12px red);
+  }
 }
